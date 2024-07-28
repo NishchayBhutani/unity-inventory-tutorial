@@ -3,22 +3,22 @@
     <ui:VisualElement name="Container" style="flex-grow: 1; min-width: auto; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
         <ui:VisualElement name="InventoryContainer" style="flex-grow: 0; background-color: rgba(142, 139, 139, 0.65); width: 60%; height: 20%; margin-left: 20%; margin-top: 43%; flex-shrink: 1; position: relative; flex-direction: row; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;">
             <ui:VisualElement name="InventoryItemContainer" class="itemcontainer" style="flex-grow: 1; width: 10%; height: auto;">
-                <ui:VisualElement name="InventoryItem" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/apple.png?fileID=2800000&amp;guid=dc8d790255daf7d48a544cf6a3975fb4&amp;type=3#apple&quot;);" />
+                <ui:VisualElement name="InventoryItem" class="inventory-item" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Assets/apple.png?fileID=2800000&amp;guid=dc8d790255daf7d48a544cf6a3975fb4&amp;type=3#apple&quot;);" />
             </ui:VisualElement>
             <ui:VisualElement name="InventoryItemContainer" class="itemcontainer" style="flex-grow: 1; width: 10%; height: auto;">
-                <ui:VisualElement name="InventoryItem" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/apple.png?fileID=2800000&amp;guid=dc8d790255daf7d48a544cf6a3975fb4&amp;type=3#apple&quot;);" />
+                <ui:VisualElement name="InventoryItem" class="inventory-item" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Assets/apple.png?fileID=2800000&amp;guid=dc8d790255daf7d48a544cf6a3975fb4&amp;type=3#apple&quot;);" />
             </ui:VisualElement>
             <ui:VisualElement name="InventoryItemContainer" class="itemcontainer" style="flex-grow: 1; width: 10%; height: auto;">
-                <ui:VisualElement name="InventoryItem" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/apple.png?fileID=2800000&amp;guid=dc8d790255daf7d48a544cf6a3975fb4&amp;type=3#apple&quot;);" />
+                <ui:VisualElement name="InventoryItem" class="inventory-item" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Assets/apple.png?fileID=2800000&amp;guid=dc8d790255daf7d48a544cf6a3975fb4&amp;type=3#apple&quot;);" />
             </ui:VisualElement>
             <ui:VisualElement name="InventoryItemContainer" class="itemcontainer" style="flex-grow: 1; width: 10%; height: auto;">
-                <ui:VisualElement name="InventoryItem" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/apple.png?fileID=2800000&amp;guid=dc8d790255daf7d48a544cf6a3975fb4&amp;type=3#apple&quot;);" />
+                <ui:VisualElement name="InventoryItem" class="inventory-item" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Assets/apple.png?fileID=2800000&amp;guid=dc8d790255daf7d48a544cf6a3975fb4&amp;type=3#apple&quot;);" />
             </ui:VisualElement>
             <ui:VisualElement name="InventoryItemContainer" class="itemcontainer" style="flex-grow: 1; width: 10%; height: auto;">
-                <ui:VisualElement name="InventoryItem" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/apple.png?fileID=2800000&amp;guid=dc8d790255daf7d48a544cf6a3975fb4&amp;type=3#apple&quot;);" />
+                <ui:VisualElement name="InventoryItem" class="inventory-item" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Assets/apple.png?fileID=2800000&amp;guid=dc8d790255daf7d48a544cf6a3975fb4&amp;type=3#apple&quot;);" />
             </ui:VisualElement>
             <ui:VisualElement name="InventoryItemContainer" class="itemcontainer" style="flex-grow: 1; width: 10%; height: auto;">
-                <ui:VisualElement name="InventoryItem" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/apple.png?fileID=2800000&amp;guid=dc8d790255daf7d48a544cf6a3975fb4&amp;type=3#apple&quot;);" />
+                <ui:VisualElement name="InventoryItem" class="inventory-item" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Assets/apple.png?fileID=2800000&amp;guid=dc8d790255daf7d48a544cf6a3975fb4&amp;type=3#apple&quot;);" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

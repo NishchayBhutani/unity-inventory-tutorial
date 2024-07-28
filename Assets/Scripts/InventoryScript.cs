@@ -7,9 +7,9 @@ public class InventoryScript : MonoBehaviour
 {
 
     UIDocument uiDocument;
-    VisualElement inventoryContainer;
     List<VisualElement> inventoryItems;
-
+    int index;
+    
     public static InventoryScript INSTANCE {get; private set;}
     public int maxInventorySize = 6;
 
@@ -23,30 +23,45 @@ public class InventoryScript : MonoBehaviour
 
         uiDocument = GetComponent<UIDocument>();
         VisualElement root = uiDocument.rootVisualElement;
-        inventoryContainer = root.Q("InventoryContainer");
         inventoryItems = root.Query("InventoryItemContainer").ToList();
+        index = inventoryItems.Count - 1;
     }
 
-    public void AddItem(VisualElement inventoryItemContainer) {
-        if(inventoryItems.Count == maxInventorySize) {
+    void Update() {
+    }
+
+    public void AddItem(VisualElement inventoryItem) {
+        Debug.Log("inventory item: "+inventoryItem);
+        if((index + 1) == maxInventorySize) {
             Debug.Log("Inventory Full!");
             return;
         }
-        inventoryItems.Add(inventoryItemContainer);
+        VisualElement inventoryItemContainer = inventoryItems[index + 1];
+        inventoryItemContainer.Add(inventoryItem);
+        // inventoryItems.Add(inventoryItem);
+        index++;
     }
 
     public void RemoveItem() {
-        if(inventoryItems.Count == 0) {
+        if(index < 0) {
             Debug.Log("Inventory Empty!");
             return;
         }
-        Debug.Log("inventory items count: " + inventoryItems.Count);
-        VisualElement itemToRemove = inventoryItems[inventoryItems.Count - 1];
-        itemToRemove.Remove(itemToRemove.Q("InventoryItem"));
-        inventoryItems.RemoveAt(inventoryItems.Count - 1);
+        Debug.Log("item to be removed at index: " + index);
+        VisualElement inventoryItemContainer = inventoryItems[index];
+        VisualElement itemToRemove = inventoryItemContainer.ElementAt(0);
+        if(itemToRemove != null) {
+            inventoryItemContainer.Remove(itemToRemove);
+            // inventoryItems.RemoveAt(index);
+            index--;
+            Debug.Log("value of index after item removal: " + index);
+        }
     }
 
     public void Clear() {
-        inventoryItems.Clear();
+        Debug.LogError("Clear() called!");
+        foreach(VisualElement visualElement in inventoryItems) {
+            visualElement.Clear();
+        }
     }
 }
