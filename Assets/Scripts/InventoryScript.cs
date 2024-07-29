@@ -12,6 +12,7 @@ public class InventoryScript : MonoBehaviour
     
     public static InventoryScript INSTANCE {get; private set;}
     public int maxInventorySize = 6;
+    public bool isFull = false;
 
     void Awake() {
 
@@ -25,6 +26,9 @@ public class InventoryScript : MonoBehaviour
         VisualElement root = uiDocument.rootVisualElement;
         inventoryItems = root.Query("InventoryItemContainer").ToList();
         index = inventoryItems.Count - 1;
+        if(inventoryItems.Count == maxInventorySize) {
+            isFull = true;
+        }
     }
 
     void Update() {
@@ -34,6 +38,7 @@ public class InventoryScript : MonoBehaviour
         Debug.Log("inventory item: "+inventoryItem);
         if((index + 1) == maxInventorySize) {
             Debug.Log("Inventory Full!");
+            isFull = true;
             return;
         }
         VisualElement inventoryItemContainer = inventoryItems[index + 1];
@@ -56,6 +61,7 @@ public class InventoryScript : MonoBehaviour
             index--;
             Debug.Log("value of index after item removal: " + index);
         }
+        isFull = false;
     }
 
     public void Clear() {

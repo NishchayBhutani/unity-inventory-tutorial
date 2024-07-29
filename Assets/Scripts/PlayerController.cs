@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     Vector2 moveInput;
     Rigidbody2D rb;
+    private Vector2 elementSize;
 
     public float moveSpeed = 6f;
 
@@ -39,13 +40,16 @@ public class PlayerController : MonoBehaviour
         Debug.Log("collided with: " + collider.gameObject.name);
         if(collider.gameObject.tag == "Consumable") {
             Sprite sprite = collider.gameObject.GetComponent<SpriteRenderer>().sprite;
-            VisualElement visualElement = new VisualElement();
-            visualElement.name = sprite.name;
-            visualElement.style.height = visualElement.resolvedStyle.height;
-            visualElement.style.width = visualElement.resolvedStyle.width;
-            visualElement.style.backgroundImage = new StyleBackground(sprite);
-            visualElement.AddToClassList("inventory-item");
-            InventoryScript.INSTANCE.AddItem(visualElement);
+            VisualElement inventoryItem = new VisualElement();
+            inventoryItem.name = sprite.name;
+            inventoryItem.style.backgroundImage = new StyleBackground(sprite);
+            inventoryItem.style.height = new Length(100, LengthUnit.Percent);
+            inventoryItem.style.width = new Length(100, LengthUnit.Percent);
+            InventoryScript.INSTANCE.AddItem(inventoryItem);
+            if(!InventoryScript.INSTANCE.isFull) {
+                Destroy(collider.gameObject);
+            }
         }
    }
+
 }
